@@ -1,11 +1,11 @@
-About awkward-cpp
-=================
+About awkward-cpp-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awkward-cpp-feedstock/blob/main/LICENSE.txt)
 
 Home: https://pypi.org/project/awkward-cpp/
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/awkward-cpp-feedstock/blob/main/LICENSE.txt)
 
 Summary: CPU kernels and compiled extensions for Awkward Array
 
