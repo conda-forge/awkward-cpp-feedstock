@@ -29,7 +29,7 @@ requirements:
   run:
     - python
     - importlib-resources  # [py<39]
-    - numpy
+    - numpy >=1.17.0
 
 test:
   imports:
