@@ -1,5 +1,5 @@
 {% set name = "awkward-cpp" %}
-{% set version = "18" %}
+{% set version = "19" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/awkward-cpp-{{ version }}.tar.gz
-  sha256: d5ed0c368a9ef24ef51ce31925fe22ab303b55cd189aba3b9d924acda8b86006
+  sha256: c7400c3888e2686be6d634e25eec2f2d499d4fca0e21b9b22c30cdd9c958f09c
 
 build:
   script:
