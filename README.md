@@ -400,7 +400,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@conda-forge/awkward](https://github.com/conda-forge/awkward/)
-* [@conda-forge/scikit-hep](https://github.com/conda-forge/scikit-hep/)
+* [@conda-forge/awkward](https://github.com/orgs/conda-forge/teams/awkward/)
+* [@conda-forge/scikit-hep](https://github.com/orgs/conda-forge/teams/scikit-hep/)
 * [@henryiii](https://github.com/henryiii/)
 
