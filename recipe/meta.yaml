@@ -1,6 +1,6 @@
 {% set name = "awkward-cpp" %}
-{% set version = "37" %}
-{% set build = 2 %}
+{% set version = "38" %}
+{% set build = 0 %}
 
 package:
   name: {{ name|lower }}
@@ -8,15 +8,15 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 6dff5fce4afcadb492bbf7cb20908572d99bdc32aa2bea8681bacfb69b2aa86d
+  sha256: 9744956a1d787c3d215ea13c5aa1b61109c893f01dd1efe2da68f58ede8ad15b
 
 build:
   # Prioritize builds with a higher microarch level.
   # microarch_level 4 not supported yet.
   # c.f. https://github.com/conda-forge/microarch-level-feedstock/issues/5
-  number: {{ build }}          # [not (unix and x86_64)]
-  number: {{ build + 100 }}    # [unix and x86_64 and microarch_level == 1]
-  number: {{ build + 300 }}    # [unix and x86_64 and microarch_level == 3]
+  number: {{ build }}  # [not (unix and x86_64)]
+  number: {{ build + 100 }}  # [unix and x86_64 and microarch_level == 1]
+  number: {{ build + 300 }}  # [unix and x86_64 and microarch_level == 3]
   script:
     - {{ PYTHON }} -m pip install . -vv
 
@@ -54,7 +54,6 @@ about:
   license_file:
     - LICENSE
     - rapidjson/license.txt
-    - rapidjson/bin/jsonschema/LICENSE
 
 extra:
   recipe-maintainers:
