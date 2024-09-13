@@ -54,7 +54,6 @@ about:
   license_file:
     - LICENSE
     - rapidjson/license.txt
-    - rapidjson/bin/jsonschema/LICENSE
 
 extra:
   recipe-maintainers:
