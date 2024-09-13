@@ -1,6 +1,6 @@
 {% set name = "awkward-cpp" %}
 {% set version = "38" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,12 @@ source:
   sha256: 9744956a1d787c3d215ea13c5aa1b61109c893f01dd1efe2da68f58ede8ad15b
 
 build:
-  number: {{ build }}
+  # Prioritize builds with a higher microarch level.
+  # microarch_level 4 not supported yet.
+  # c.f. https://github.com/conda-forge/microarch-level-feedstock/issues/5
+  number: {{ build }}  # [not (unix and x86_64)]
+  number: {{ build + 100 }}  # [unix and x86_64 and microarch_level == 1]
+  number: {{ build + 300 }}  # [unix and x86_64 and microarch_level == 3]
   script:
     - {{ PYTHON }} -m pip install . -vv
 
@@ -19,6 +24,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - x86_64-microarch-level {{ microarch_level }}  # [unix and x86_64]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cmake >=3.15
