@@ -20,9 +20,6 @@ jobs:
       osx_64_microarch_level1python3.13.____cp313:
         CONFIG: osx_64_microarch_level1python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_64_microarch_level1python3.8.____cpython:
-        CONFIG: osx_64_microarch_level1python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
       osx_64_microarch_level1python3.9.____cpython:
         CONFIG: osx_64_microarch_level1python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -38,9 +35,6 @@ jobs:
       osx_64_microarch_level3python3.13.____cp313:
         CONFIG: osx_64_microarch_level3python3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_64_microarch_level3python3.8.____cpython:
-        CONFIG: osx_64_microarch_level3python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
       osx_64_microarch_level3python3.9.____cpython:
         CONFIG: osx_64_microarch_level3python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -55,9 +49,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.13.____cp313:
         CONFIG: osx_arm64_python3.13.____cp313
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_python3.8.____cpython:
-        CONFIG: osx_arm64_python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.9.____cpython:
         CONFIG: osx_arm64_python3.9.____cpython
