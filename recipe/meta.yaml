@@ -1,13 +1,13 @@
 {% set name = "awkward-cpp" %}
 {% set version = "40" %}
-{% set build = 0 %}
+{% set build = 1 %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: ca5658a3db04cc80e9c5d0eb9f7db41290d882c123a068bef724a879c9084367
 
 build:
@@ -17,8 +17,7 @@ build:
   number: {{ build }}  # [not (unix and x86_64)]
   number: {{ build + 100 }}  # [unix and x86_64 and microarch_level == 1]
   number: {{ build + 300 }}  # [unix and x86_64 and microarch_level == 3]
-  script:
-    - {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
