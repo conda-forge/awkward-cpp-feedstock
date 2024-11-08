@@ -3,9 +3,9 @@ microarch_level:  # [unix and x86_64]
   - 3  # [unix and x86_64]
 
 python:
-- '3.8'
-- '3.9'
-- '3.10'
-- '3.11'
-- '3.12'
-- '3.13'
+- 3.8.* *_cpython
+- 3.9.* *_cpython
+- 3.10.* *_cpython
+- 3.11.* *_cpython
+- 3.12.* *_cpython
+- 3.13.* *_cpython
