@@ -1,5 +1,5 @@
 {% set name = "awkward-cpp" %}
-{% set version = "42" %}
+{% set version = "43" %}
 {% set build = 0 %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: d6c489ecbe9ab2eaa34d45ccecec55b74807b363feca23b8d76dc8bc207355ec
+  sha256: c1ed75596ec82af666da084b5bf805d9b72c83532d035d2b65e0795905d25ead
 
 build:
   # Prioritize builds with a higher microarch level.
