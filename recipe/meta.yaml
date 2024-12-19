@@ -1,6 +1,6 @@
 {% set name = "awkward-cpp" %}
 {% set version = "43" %}
-{% set build = 1 %}
+{% set build = 2 %}
 
 package:
   name: {{ name|lower }}
@@ -14,9 +14,10 @@ build:
   # Prioritize builds with a higher microarch level.
   # microarch_level 4 not supported yet.
   # c.f. https://github.com/conda-forge/microarch-level-feedstock/issues/5
+  # Only use up to microarch_level 2 as unclear if level 3 has worthwhile benefits.
   number: {{ build }}  # [not (unix and x86_64)]
   number: {{ build + 100 }}  # [unix and x86_64 and microarch_level == 1]
-  number: {{ build + 300 }}  # [unix and x86_64 and microarch_level == 3]
+  number: {{ build + 200 }}  # [unix and x86_64 and microarch_level == 2]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
