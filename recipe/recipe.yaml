@@ -39,7 +39,7 @@ requirements:
   run:
     - python
     - if: python <3.9
-      then: importlib-resources  # [py<39]
+      then: importlib-resources
     - numpy >=1.18.0
 
 tests:
