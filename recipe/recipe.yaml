@@ -1,14 +1,13 @@
 context:
-  name: "awkward-cpp"
-  version: "46"
+  version: "47"
 
 package:
-  name: ${{ name|lower }}
+  name: awkward-cpp
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: b82becb65a33280c6c27336ee5c037c5b7e394be52565aa31e087ca54adce59e
+  url: https://pypi.org/packages/source/a/awkward-cpp/awkward_cpp-${{ version }}.tar.gz
+  sha256: 676cf4976810edab32187edf5a8a716af95047b9038c96d27d3be44f1331950f
 
 build:
   number: 1
