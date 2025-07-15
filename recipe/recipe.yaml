@@ -24,8 +24,9 @@ requirements:
       then:
         - python
         - cross-python_${{ target_platform }}
+    # c.f. https://github.com/conda-forge/awkward-cpp-feedstock/pull/67#issuecomment-3073170539
     - if: unix and x86_64
-      then: x86_64-microarch-level ==${{ x86_64_microarch_level }}
+      then: x86_64-microarch-level ${{ '==' ~ x86_64_microarch_level if x86_64_microarch_level else "*" }}
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - cmake >=3.15
