@@ -1,6 +1,6 @@
 context:
   name: "awkward-cpp"
-  version: "47"
+  version: "48"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 676cf4976810edab32187edf5a8a716af95047b9038c96d27d3be44f1331950f
+  sha256: 368a9f7d317e7da42d291f51b814e9580825db7d3eb7026b0d47427bfad23e2f
 
 build:
   number: 0
