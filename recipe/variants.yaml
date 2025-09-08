@@ -5,3 +5,10 @@ x86_64_microarch_level:
       - 3
       # Level 4 might not be available on the build machine
       # - "4"
+python:
+  - "3.9"
+  - "3.10"
+  - "3.11"
+  - "3.12"
+  - "3.13"
+  - "3.14"
