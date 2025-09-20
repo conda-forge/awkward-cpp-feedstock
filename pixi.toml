@@ -7,7 +7,7 @@
 
 [project]
 name = "awkward-cpp-feedstock"
-version = "3.52.1"  # conda-smithy version used to generate this file
+version = "3.52.2"  # conda-smithy version used to generate this file
 description = "Pixi configuration for conda-forge/awkward-cpp-feedstock"
 authors = ["@conda-forge/awkward-cpp"]
 channels = ["conda-forge"]
