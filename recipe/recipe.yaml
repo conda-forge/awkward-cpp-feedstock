@@ -1,6 +1,6 @@
 context:
   name: "awkward-cpp"
-  version: "51"
+  version: "52"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name|replace('-', '_') }}-${{ version }}.tar.gz
-  sha256: 8c74e8f9fb2501766d1b0f9f2eb8777e384411d33534a8fa667d56599223a04b
+  sha256: ef141eb20544df261b973c986cfae57be329022061be86817506add676597275
 
 build:
   number: 0
@@ -35,13 +35,11 @@ requirements:
   host:
     - python
     - pip
-    - scikit-build-core >=0.2.0
+    - scikit-build-core >=0.11.0
     - pybind11
   run:
     - python
-    - if: python <3.9
-      then: importlib-resources
-    - numpy >=1.18.0
+    - numpy >=1.21.3
 
 tests:
   - python:
