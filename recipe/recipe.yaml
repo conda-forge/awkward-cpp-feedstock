@@ -35,13 +35,11 @@ requirements:
   host:
     - python
     - pip
-    - scikit-build-core >=0.2.0
+    - scikit-build-core >=0.11.0
     - pybind11
   run:
     - python
-    - if: python <3.9
-      then: importlib-resources
-    - numpy >=1.18.0
+    - numpy >=1.21.3
 
 tests:
   - python:
