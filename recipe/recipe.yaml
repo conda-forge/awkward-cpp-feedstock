@@ -15,7 +15,11 @@ build:
     use_keys:
       - x86_64_microarch_level
     down_prioritize_variant: ${{ 0 if (x86_64_microarch_level | default(1)) == 1 else 1 }}
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script:
+    # Intentionally skip win for the time being
+    - if: unix
+      then: export CMAKE_GENERATOR=Ninja
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   build:
@@ -28,9 +32,9 @@ requirements:
       then: x86_64-microarch-level ${{ '==' ~ x86_64_microarch_level if x86_64_microarch_level else "*" }}
     - ${{ compiler("cxx") }}
     - ${{ stdlib("c") }}
-    - cmake >=3.15
+    - cmake
     - if: unix
-      then: make
+      then: ninja
   host:
     - python
     - pip
