@@ -15,7 +15,7 @@ build:
   variant:
     use_keys:
       - x86_64_microarch_level
-    down_prioritize_variant: ${{ 0 if x86_64_microarch_level == 1 else 1 }}
+    down_prioritize_variant: ${{ 0 if (x86_64_microarch_level | default(1)) == 1 else 1 }}
   script: ${{ PYTHON }} -m pip install . -vv
 
 requirements:
