@@ -10,13 +10,13 @@ source:
   sha256: cd3635fab926c6630c0a85d92b59a15851c4f5a881ea749984069027634f8f52
 
 build:
-  number: 1
+  number: 2
   variant:
     use_keys:
       - x86_64_microarch_level
     down_prioritize_variant: ${{ 0 if (x86_64_microarch_level | default(1)) == 1 else 1 }}
   script:
-    # Intentionally skip win for the time being
+    # Use Ninja on Unix and Visual Studio on Windows.
     - if: unix
       then: export CMAKE_GENERATOR=Ninja
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -49,6 +49,22 @@ tests:
       imports:
         - awkward_cpp
       pip_check: true
+
+  - if: win and arm64
+    then:
+      requirements:
+        run:
+          - pytest
+          - awkward ==2.13.0
+      files:
+        source:
+          - tests-cpu-kernels/
+          - tests-cpu-kernels-explicit/
+        recipe:
+          - test_native.py
+      script:
+        - python -m pytest -q tests-cpu-kernels tests-cpu-kernels-explicit
+        - python test_native.py
 
 about:
   homepage: https://github.com/scikit-hep/awkward
