@@ -16,13 +16,9 @@ build:
       - x86_64_microarch_level
     down_prioritize_variant: ${{ 0 if (x86_64_microarch_level | default(1)) == 1 else 1 }}
   script:
-    # Preserve the existing generator on win-64.
+    # Use Ninja on Unix and Visual Studio on Windows.
     - if: unix
       then: export CMAKE_GENERATOR=Ninja
-    - if: win and arm64
-      then:
-        - set CMAKE_GENERATOR=Ninja
-        - set CMAKE_GENERATOR_PLATFORM=
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
@@ -37,7 +33,7 @@ requirements:
     - ${{ compiler("cxx") }}
     - ${{ stdlib("c") }}
     - cmake
-    - if: unix or (win and arm64)
+    - if: unix
       then: ninja
   host:
     - python
