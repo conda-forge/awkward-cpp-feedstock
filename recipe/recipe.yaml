@@ -20,7 +20,9 @@ build:
     - if: unix
       then: export CMAKE_GENERATOR=Ninja
     - if: win and arm64
-      then: set CMAKE_GENERATOR=Ninja
+      then:
+        - set CMAKE_GENERATOR=Ninja
+        - set CMAKE_GENERATOR_PLATFORM=
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
