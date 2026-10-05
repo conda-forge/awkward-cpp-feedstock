@@ -55,7 +55,9 @@ tests:
       requirements:
         run:
           - pytest
-          - awkward ==2.13.0
+          - pip
+          - packaging
+          - fsspec >=2022.11.0
       files:
         source:
           - tests-cpu-kernels/
@@ -63,6 +65,10 @@ tests:
         recipe:
           - test_native.py
       script:
+        # Bootstrap the matching Python package before its conda release.
+        # Keep the locally built awkward-cpp package under test.
+        - python -m pip install --no-deps --only-binary=:all: awkward==2.14.0
+        - python -m pip check
         - python -m pytest -q tests-cpu-kernels tests-cpu-kernels-explicit
         - python test_native.py
 
