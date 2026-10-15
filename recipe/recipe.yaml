@@ -10,7 +10,7 @@ source:
   sha256: df2fff584d72b9942db6eb700fa24fe898bc65e369eecbcd35bcf81269aa41d2
 
 build:
-  number: 0
+  number: 1
   variant:
     use_keys:
       - x86_64_microarch_level

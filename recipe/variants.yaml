@@ -5,3 +5,23 @@ x86_64_microarch_level:
       - 3
       # Level 4 might not be available on the build machine
       # - "4"
+
+# conda-forge dropped Python 3.10 globally, but awkward-cpp still supports it
+# (requires-python >=3.10) and ships 3.10 wheels on PyPI, so keep building it.
+# `python` and `is_python_min` are zipped, so both lists must stay aligned.
+python:
+  - if: not (win and arm64)
+    then:
+      - 3.10.* *_cpython
+      - 3.11.* *_cpython
+      - 3.12.* *_cpython
+      - 3.13.* *_cp313
+  - 3.14.* *_cp314
+is_python_min:
+  - true
+  - if: not (win and arm64)
+    then:
+      - false
+      - false
+      - false
+      - false
