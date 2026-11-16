@@ -6,7 +6,7 @@ package:
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/a/awkward-cpp/awkward_cpp-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/a/awkward-cpp/awkward_cpp-${{ version }}.tar.gz
   sha256: 03dcf36497c01cd4fdeee7dc6d4721ae342ad8a90e32a3dfd2cf0ca8c1781e1f
 
 build:
