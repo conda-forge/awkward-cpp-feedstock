@@ -19,7 +19,7 @@ build:
     # Use Ninja on Unix and Visual Studio on Windows.
     - if: unix
       then: export CMAKE_GENERATOR=Ninja
-    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    - ${{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
